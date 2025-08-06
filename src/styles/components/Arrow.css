@@ -1,0 +1,3 @@
+.arrow-container {
+  @apply flex shrink max-w-[200px] max-h-[100px];
+}

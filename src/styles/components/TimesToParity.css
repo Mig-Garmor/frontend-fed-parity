@@ -1,0 +1,7 @@
+.times-to-parity-container {
+  .ttp-text {
+    @apply text-center text-2xl font-bold text-white;
+  }
+  @apply flex flex-row items-center justify-center;
+  @apply md:flex-col lg:flex-col;
+}
