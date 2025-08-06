@@ -4,6 +4,7 @@ import { computed } from "vue";
 const props = defineProps({
   svg: String,
   size: String,
+  price: Number,
 });
 
 const circleSize = computed(() => {
@@ -32,8 +33,12 @@ const svgUrl = computed(() => {
 </script>
 
 <template>
-  <div class="token-circle" :class="circleSize">
-    <img :src="svgUrl" alt="" />
+  <div class="token-circle-container">
+    <div v-if="price" class="token-badge">${{ price }}</div>
+
+    <div class="token-circle" :class="circleSize">
+      <img :src="svgUrl" alt="" />
+    </div>
   </div>
 </template>
 
