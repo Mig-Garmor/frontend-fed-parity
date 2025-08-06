@@ -41,8 +41,7 @@ const ratios = computed(() => {
 
 <template>
   <div class="home-container">
-    <h1 class="title-1">FED - TBill - pDAI</h1>
-    <h1 class="title-2">1:1:1</h1>
+    <h1 class="title-1">1:1:1</h1>
     <!-- Desktop view -->
     <div v-if="!loading.value && ratios" class="all-token-container">
       <TokenCircle
@@ -77,7 +76,7 @@ const ratios = computed(() => {
       <TokenCircle
         size="medium"
         svg="pDAI"
-        :price="parseFloat(tokenPrices['TBILL'].price).toFixed(6)"
+        :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
       />
     </div>
   </div>
