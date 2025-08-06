@@ -5,6 +5,7 @@ const props = defineProps({
   svg: String,
   size: String,
   price: Number,
+  name: String,
 });
 
 const circleSize = computed(() => {
@@ -34,11 +35,11 @@ const svgUrl = computed(() => {
 
 <template>
   <div class="token-circle-container">
-    <div v-if="price" class="token-badge">${{ price }}</div>
-
+    <div v-if="name" class="token-name">{{ name }}</div>
     <div class="token-circle" :class="circleSize">
       <img :src="svgUrl" alt="" />
     </div>
+    <div v-if="price" class="token-price">${{ price }}</div>
   </div>
 </template>
 

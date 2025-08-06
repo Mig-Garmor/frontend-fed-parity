@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
   <div class="times-to-parity-container">
     <Arrow />
-    <p class="ttp-text">{{ multiplier }}X</p>
+    <p class="ttp-text">{{ multiplier }}x to parity</p>
   </div>
 </template>
 

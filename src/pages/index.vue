@@ -41,43 +41,55 @@ const ratios = computed(() => {
 
 <template>
   <div class="home-container">
-    <h1 class="title-1">1:1:1</h1>
-    <!-- Desktop view -->
-    <div v-if="!loading.value && ratios" class="all-token-container">
-      <TokenCircle
-        size="large"
-        svg="teh"
-        :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
-      />
-      <TimesToParity :multiplier="ratios['tbill-fed']" />
-      <TokenCircle
-        size="large"
-        svg="tbill"
-        :price="parseFloat(tokenPrices['TBILL'].price).toFixed(6)"
-      />
-      <TimesToParity
-        class="hidden md:block"
-        :multiplier="ratios['pdai-tbill']"
-      />
-      <TokenCircle
-        class="hidden md:block"
-        size="large"
-        svg="pDAI"
-        :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
-      />
+    <div class="title-container">
+      <div class="header-left-block">
+        <img class="header-image" src="../assets/teh-lady.png" alt="" />
+      </div>
+      <h1 class="title-1">$FED To Parity</h1>
+      <div class="header-right-block"></div>
     </div>
-    <div v-if="!loading.value && ratios" class="pdai-fed-container">
-      <TokenCircle
-        size="medium"
-        svg="teh"
-        :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
-      />
-      <TimesToParity :multiplier="ratios['pdai-fed']" />
-      <TokenCircle
-        size="medium"
-        svg="pDAI"
-        :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
-      />
+    <div class="tokens-display-container">
+      <div v-if="!loading.value && ratios" class="all-token-container">
+        <TokenCircle
+          size="large"
+          svg="teh"
+          :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
+          name="FED"
+        />
+        <TimesToParity :multiplier="ratios['tbill-fed']" />
+        <TokenCircle
+          size="large"
+          svg="tbill"
+          :price="parseFloat(tokenPrices['TBILL'].price).toFixed(6)"
+          name="TBILL"
+        />
+        <TimesToParity
+          class="hidden md:block"
+          :multiplier="ratios['pdai-tbill']"
+        />
+        <TokenCircle
+          class="hidden md:block"
+          size="large"
+          svg="pDAI"
+          :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
+          name="PDAI"
+        />
+      </div>
+      <div v-if="!loading.value && ratios" class="pdai-fed-container">
+        <TokenCircle
+          size="medium"
+          svg="teh"
+          :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
+          name="FED"
+        />
+        <TimesToParity :multiplier="ratios['pdai-fed']" />
+        <TokenCircle
+          size="medium"
+          svg="pDAI"
+          :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
+          name="PDAI"
+        />
+      </div>
     </div>
   </div>
 </template>
