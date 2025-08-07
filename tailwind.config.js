@@ -12,6 +12,9 @@ export default {
       animation: {
         "pulse-skeleton": "pulseSkeleton 1.5s ease-in-out infinite",
       },
+      backgroundSize: {
+        "auto-height": "auto 100%",
+      },
     },
   },
   plugins: [],
