@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from "vue";
+import { useAppStore } from "../stores/app";
 
 const props = defineProps({
   svg: String,
@@ -7,6 +8,8 @@ const props = defineProps({
   price: Number,
   name: String,
 });
+
+const appStore = useAppStore();
 
 const circleSize = computed(() => {
   switch (props.size) {
@@ -39,7 +42,8 @@ const svgUrl = computed(() => {
     <div class="token-circle" :class="circleSize">
       <img :src="svgUrl" alt="" />
     </div>
-    <div v-if="price" class="token-price">${{ price }}</div>
+    <div v-if="appStore.loading" class="token-price">Loading...</div>
+    <div v-else class="token-price">${{ price }}</div>
   </div>
 </template>
 

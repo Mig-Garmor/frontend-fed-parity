@@ -2,20 +2,22 @@
 import { computed, onMounted, ref } from "vue";
 import TimesToParity from "../components/TimesToParity.vue";
 import TokenCircle from "../components/TokenCircle.vue";
-
 import { fetchPrices } from "../utils/requests";
 
+import { useAppStore } from "../stores/app";
+
 const tokenPrices = ref({});
-const loading = ref(true);
+
+const appStore = useAppStore();
 
 onMounted(async () => {
   tokenPrices.value = await fetchPrices();
-  loading.value = false;
+  appStore.loading = false;
 });
 
 const ratios = computed(() => {
   //Check if not an empty object
-  if (!loading.value) {
+  if (!appStore.loading) {
     const DAITBILL = (
       parseFloat(tokenPrices.value.PDAI.price) /
       parseFloat(tokenPrices.value.TBILL.price)
@@ -49,44 +51,64 @@ const ratios = computed(() => {
       <div class="header-right-block"></div>
     </div>
     <div class="tokens-display-container">
-      <div v-if="!loading.value && ratios" class="all-token-container">
+      <div class="all-token-container">
         <TokenCircle
           size="large"
           svg="teh"
-          :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
+          :price="
+            tokenPrices['FED']
+              ? parseFloat(tokenPrices['FED'].price).toFixed(8)
+              : ''
+          "
           name="FED"
         />
-        <TimesToParity :multiplier="ratios['tbill-fed']" />
+        <TimesToParity :multiplier="ratios ? ratios['tbill-fed'] : ''" />
         <TokenCircle
           size="large"
           svg="tbill"
-          :price="parseFloat(tokenPrices['TBILL'].price).toFixed(6)"
+          :price="
+            tokenPrices['TBILL']
+              ? parseFloat(tokenPrices['TBILL'].price).toFixed(6)
+              : ''
+          "
           name="TBILL"
         />
         <TimesToParity
           class="hidden md:block"
-          :multiplier="ratios['pdai-tbill']"
+          :multiplier="ratios ? ratios['pdai-tbill'] : ''"
         />
         <TokenCircle
           class="hidden md:block"
           size="large"
           svg="pDAI"
-          :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
+          :price="
+            tokenPrices['PDAI']
+              ? parseFloat(tokenPrices['PDAI'].price).toFixed(6)
+              : ''
+          "
           name="PDAI"
         />
       </div>
-      <div v-if="!loading.value && ratios" class="pdai-fed-container">
+      <div class="pdai-fed-container">
         <TokenCircle
           size="medium"
           svg="teh"
-          :price="parseFloat(tokenPrices['FED'].price).toFixed(8)"
+          :price="
+            tokenPrices['FED']
+              ? parseFloat(tokenPrices['FED'].price).toFixed(8)
+              : ''
+          "
           name="FED"
         />
-        <TimesToParity :multiplier="ratios['pdai-fed']" />
+        <TimesToParity :multiplier="ratios ? ratios['pdai-fed'] : ''" />
         <TokenCircle
           size="medium"
           svg="pDAI"
-          :price="parseFloat(tokenPrices['PDAI'].price).toFixed(6)"
+          :price="
+            tokenPrices['PDAI']
+              ? parseFloat(tokenPrices['PDAI'].price).toFixed(6)
+              : ''
+          "
           name="PDAI"
         />
       </div>
