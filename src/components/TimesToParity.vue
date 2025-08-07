@@ -12,7 +12,9 @@ const props = defineProps({
 <template>
   <div class="times-to-parity-container">
     <Arrow />
-    <p v-if="appStore.loading" class="ttp-text">Loading...</p>
+    <p v-if="appStore.loading" class="ttp-text animate-pulse-skeleton">
+      x to parity
+    </p>
     <p v-else class="ttp-text">{{ multiplier }}x to parity</p>
   </div>
 </template>

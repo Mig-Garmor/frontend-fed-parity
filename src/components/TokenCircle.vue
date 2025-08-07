@@ -42,7 +42,10 @@ const svgUrl = computed(() => {
     <div class="token-circle" :class="circleSize">
       <img :src="svgUrl" alt="" />
     </div>
-    <div v-if="appStore.loading" class="token-price">Loading...</div>
+    <div
+      v-if="appStore.loading"
+      class="token-price animate-pulse-skeleton"
+    ></div>
     <div v-else class="token-price">${{ price }}</div>
   </div>
 </template>
