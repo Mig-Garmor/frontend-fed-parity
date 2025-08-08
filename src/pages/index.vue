@@ -39,6 +39,31 @@ const ratios = computed(() => {
     return ratios;
   }
 });
+
+const readableLastUpdated = computed(() => {
+  const tokenData = tokenPrices && tokenPrices.value;
+
+  if (tokenData) {
+    const firstKeyWithLastUpdated =
+      tokenData &&
+      Object.keys(tokenData).find((key) => tokenData[key]?.lastUpdated);
+
+    if (firstKeyWithLastUpdated) {
+      const lastUpdatedValue = firstKeyWithLastUpdated
+        ? tokenData[firstKeyWithLastUpdated].lastUpdated
+        : "";
+
+      const date = new Date(lastUpdatedValue);
+
+      return date.toLocaleString("en-US", {
+        dateStyle: "long",
+        timeStyle: "short",
+      });
+    } else return "";
+  } else {
+    return "";
+  }
+});
 </script>
 
 <template>
@@ -49,6 +74,10 @@ const ratios = computed(() => {
       </div>
       <h1 class="title-1">$FED To Parity</h1>
       <div class="header-right-block"></div>
+    </div>
+    <div class="last-updated">
+      Last updated:
+      {{ readableLastUpdated ? readableLastUpdated : "Loading..." }}
     </div>
     <div class="tokens-display-container">
       <div class="all-token-container">
