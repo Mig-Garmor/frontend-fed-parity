@@ -1,0 +1,4 @@
+.page-wrapper {
+  @apply flex flex-col justify-start items-center min-h-screen;
+  @apply bg-[radial-gradient(circle_at_top_center,_#f000ff,_#101033,_#000015)];
+}

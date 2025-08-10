@@ -1,21 +1,16 @@
-.home-container {
-  .last-updated {
-    @apply bg-gray-300 text-center text-black text-xs px-2 py-1 rounded-[5px];
+.last-updated {
+  @apply bg-gray-300 text-center text-black text-xs px-2 py-1 rounded-[5px];
+}
+
+.tokens-display-container {
+  .all-token-container {
+    @apply flex flex-col items-center justify-center px-[40px];
+    @apply md:flex-row lg:flex-row;
   }
 
-  .tokens-display-container {
-    .all-token-container {
-      @apply flex flex-col items-center justify-center px-[40px];
-      @apply md:flex-row lg:flex-row;
-    }
-
-    .pdai-fed-container {
-      @apply flex flex-col justify-center items-center;
-      @apply md:flex-row lg:flex-row;
-    }
-    @apply flex flex-1 flex-col items-center justify-evenly gap-[50px];
+  .pdai-fed-container {
+    @apply flex flex-col justify-center items-center;
+    @apply md:flex-row lg:flex-row;
   }
-
-  @apply flex flex-col justify-start items-center min-h-screen;
-  @apply bg-[radial-gradient(circle_at_top_center,_#f000ff,_#101033,_#000015)];
+  @apply flex flex-1 flex-col items-center justify-evenly gap-[50px];
 }

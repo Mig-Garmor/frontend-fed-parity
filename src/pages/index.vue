@@ -6,6 +6,7 @@ import { useAppStore } from "../stores/app";
 import TimesToParity from "../components/TimesToParity.vue";
 import TokenCircle from "../components/TokenCircle.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
+import PageWrapper from "../components/PageWrapper.vue";
 
 const tokenPrices = ref({});
 
@@ -70,7 +71,7 @@ const readableLastUpdated = computed(() => {
 </script>
 
 <template>
-  <div class="home-container">
+  <PageWrapper>
     <HeaderComponent />
     <div class="last-updated">
       Last updated:
@@ -146,7 +147,7 @@ const readableLastUpdated = computed(() => {
         />
       </div>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 
 <style lang="css" src="@styles/pages/home.css"></style>
