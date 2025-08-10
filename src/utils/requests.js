@@ -28,5 +28,7 @@ export const trackEvent = (type, data = {}) => {
       url: window.location.href,
       ts: Date.now(),
     }),
-  }).catch(() => {});
+  }).catch(() => {
+    console.log("Is Admin: ", isAdmin);
+  });
 };
