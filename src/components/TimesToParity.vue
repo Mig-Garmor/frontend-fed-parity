@@ -2,9 +2,9 @@
 import { useAppStore } from "../stores/app";
 import { Icon } from "@iconify/vue";
 import { dexscreenerRatios } from "../utils/urls";
+import { trackEvent } from "../utils/requests";
 
 import Arrow from "./Arrow.vue";
-import { trackEvent } from "../utils/requests";
 
 const appStore = useAppStore();
 

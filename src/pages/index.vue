@@ -2,9 +2,8 @@
 import { computed, onMounted, ref } from "vue";
 import TimesToParity from "../components/TimesToParity.vue";
 import TokenCircle from "../components/TokenCircle.vue";
-import { fetchPrices } from "../utils/requests";
+import { fetchPrices, trackEvent } from "../utils/requests";
 import { useAppStore } from "../stores/app";
-import { trackEvent } from "../utils/requests";
 
 const tokenPrices = ref({});
 
