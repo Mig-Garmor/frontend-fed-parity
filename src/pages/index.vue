@@ -1,9 +1,11 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
-import TimesToParity from "../components/TimesToParity.vue";
-import TokenCircle from "../components/TokenCircle.vue";
 import { fetchPrices, trackEvent } from "../utils/requests";
 import { useAppStore } from "../stores/app";
+
+import TimesToParity from "../components/TimesToParity.vue";
+import TokenCircle from "../components/TokenCircle.vue";
+import HeaderComponent from "../components/HeaderComponent.vue";
 
 const tokenPrices = ref({});
 
@@ -69,13 +71,7 @@ const readableLastUpdated = computed(() => {
 
 <template>
   <div class="home-container">
-    <div class="title-container">
-      <div class="header-left-block">
-        <img class="header-image" src="../assets/teh-lady.png" alt="" />
-      </div>
-      <h1 class="title-1">$FED To Parity</h1>
-      <div class="header-right-block"></div>
-    </div>
+    <HeaderComponent />
     <div class="last-updated">
       Last updated:
       {{ readableLastUpdated ? readableLastUpdated : "Loading..." }}

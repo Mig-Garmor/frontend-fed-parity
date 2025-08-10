@@ -1,0 +1,19 @@
+.title-container {
+  .header-left-block {
+    .logo-container {
+      @apply w-[90px];
+    }
+    @apply flex flex-1;
+  }
+  .header-image {
+    @apply h-[60px];
+  }
+  .title-1 {
+    @apply flex justify-center items-center text-3xl font-bold text-white;
+    @apply lg:text-5xl md:text-4xl;
+  }
+  .header-right-block {
+    @apply flex flex-1;
+  }
+  @apply flex flex-row justify-between bg-black w-full py-[10px] px-[40px];
+}
