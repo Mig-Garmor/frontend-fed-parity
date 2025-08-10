@@ -9,7 +9,7 @@ export const fetchPrices = async () => {
   return await res.json();
 };
 
-export function trackEvent(type, data = {}) {
+export const trackEvent = (type, data = {}) => {
   const isAdmin = import.meta.env.VITE_IS_ADMIN === "true";
   if (isAdmin) {
     console.log("Admin no track");
@@ -29,4 +29,4 @@ export function trackEvent(type, data = {}) {
       ts: Date.now(),
     }),
   }).catch(() => {});
-}
+};
