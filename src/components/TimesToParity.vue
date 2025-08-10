@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 import { dexscreenerRatios } from "../utils/urls";
 
 import Arrow from "./Arrow.vue";
+import { trackEvent } from "../utils/requests";
 
 const appStore = useAppStore();
 
@@ -13,6 +14,7 @@ const props = defineProps({
 });
 
 const getRatioLink = (ratioName) => {
+  trackEvent("click", ratioName);
   window.open(dexscreenerRatios[ratioName], "_blank");
 };
 </script>
