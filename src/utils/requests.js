@@ -1,7 +1,7 @@
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 export const fetchPrices = async () => {
-  const res = await fetch(`${backendUrl}/prices`, {
+  const res = await fetch(`${backendURL}/prices`, {
     headers: {
       "x-api-key": import.meta.env.VITE_API_KEY,
     },
@@ -18,7 +18,7 @@ export const trackEvent = (type, data = {}) => {
   const userId = localStorage.getItem("userId") || crypto.randomUUID();
   localStorage.setItem("userId", userId);
 
-  fetch(`${backendUrl}/track`, {
+  fetch(`${backendURL}/track`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
