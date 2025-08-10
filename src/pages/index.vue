@@ -72,7 +72,6 @@ const readableLastUpdated = computed(() => {
 
 <template>
   <PageWrapper>
-    <HeaderComponent />
     <div class="last-updated">
       Last updated:
       {{ readableLastUpdated ? readableLastUpdated : "Loading..." }}
