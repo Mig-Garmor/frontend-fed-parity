@@ -17,4 +17,4 @@
   </div>
 </template>
 
-<style lang="css" src="@styles/components/Arrow.css"></style>
+<style lang="css" src="@styles/components/arrow.css"></style>

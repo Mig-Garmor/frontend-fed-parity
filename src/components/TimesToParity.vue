@@ -35,4 +35,4 @@ const getRatioLink = (ratioName) => {
   </div>
 </template>
 
-<style lang="css" src="@styles/components/TimesToParity.css"></style>
+<style lang="css" src="@styles/components/times-to-parity.css"></style>

@@ -52,4 +52,4 @@ const svgUrl = computed(() => {
   </div>
 </template>
 
-<style lang="css" src="@styles/components/TokenCircles.css"></style>
+<style lang="css" src="@styles/components/token-circles.css"></style>

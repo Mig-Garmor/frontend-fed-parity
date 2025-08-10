@@ -9,4 +9,4 @@ import HeaderComponent from "./HeaderComponent.vue";
   </div>
 </template>
 
-<style lang="css" src="@styles/components/PageWrapper.css"></style>
+<style lang="css" src="@styles/components/page-wrapper.css"></style>
