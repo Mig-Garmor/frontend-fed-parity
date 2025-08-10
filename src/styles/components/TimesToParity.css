@@ -1,6 +1,23 @@
 .times-to-parity-container {
-  .ttp-text {
-    @apply text-center text-xl text-white;
+  .ttp-container {
+    .ttp-text {
+      @apply text-center text-xl text-white;
+    }
+    .ratio-name-container {
+      .ratio-name {
+        @apply text-center text-[10px] text-black;
+        @apply md:text-xs lg:text-xs;
+      }
+      .iconify {
+        @apply text-[10px] text-black;
+        @apply md:text-base lg:text-base;
+      }
+      @apply flex flex-row items-center justify-center gap-[5px];
+      /* button styles */
+      @apply bg-gray-300 px-[10px] py-[5px] rounded-[5px] cursor-pointer hover:bg-gray-400 transition-colors;
+    }
+
+    @apply flex flex-col items-center justify-center gap-[10px];
   }
   @apply flex flex-row items-center justify-center;
   @apply md:flex-col lg:flex-col;

@@ -93,7 +93,10 @@ const readableLastUpdated = computed(() => {
           "
           name="FED"
         />
-        <TimesToParity :multiplier="ratios ? ratios['tbill-fed'] : ''" />
+        <TimesToParity
+          :multiplier="ratios ? ratios['tbill-fed'] : ''"
+          ratioName="FED/TBILL"
+        />
         <TokenCircle
           size="large"
           svg="tbill"
@@ -107,6 +110,7 @@ const readableLastUpdated = computed(() => {
         <TimesToParity
           class="hidden md:block"
           :multiplier="ratios ? ratios['pdai-tbill'] : ''"
+          ratioName="TBILL/PDAI"
         />
         <TokenCircle
           class="hidden md:block"
@@ -131,7 +135,10 @@ const readableLastUpdated = computed(() => {
           "
           name="FED"
         />
-        <TimesToParity :multiplier="ratios ? ratios['pdai-fed'] : ''" />
+        <TimesToParity
+          :multiplier="ratios ? ratios['pdai-fed'] : ''"
+          ratioName="FED/PDAI"
+        />
         <TokenCircle
           size="medium"
           svg="pDAI"
