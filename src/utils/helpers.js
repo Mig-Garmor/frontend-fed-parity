@@ -1,5 +1,5 @@
 export function trackEvent(type, data = {}) {
-  fetch("/api/track", {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/track`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
