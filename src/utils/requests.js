@@ -25,7 +25,7 @@ export const trackEvent = (type, data = {}) => {
       data,
       userId, // identify returning user
       url: window.location.href,
-      ts: Date.now(),
+      ts: new Date().toISOString(),
     }),
   }).catch(() => {});
 };
