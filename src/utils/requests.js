@@ -12,7 +12,6 @@ export const fetchPrices = async () => {
 export const trackEvent = (type, data = {}) => {
   const isAdmin = import.meta.env.VITE_IS_ADMIN === "true";
   if (isAdmin) {
-    console.log("Admin no track");
     return;
   }
   const userId = localStorage.getItem("userId") || crypto.randomUUID();
