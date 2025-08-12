@@ -14,8 +14,4 @@ const router = createRouter({
   routes: enhancedRoutes,
 });
 
-router.beforeEach((to, from, next) => {
-  next();
-});
-
 export default router;
