@@ -6,8 +6,12 @@
         <img class="header-image" src="../assets/teh-lady.png" alt="" />
       </div>
     </div>
-    <h1 class="title-1">$FED To Parity</h1>
-    <div class="header-right-block"></div>
+    <h1 class="title-1">
+      <a href="/">$FED To Parity</a>
+    </h1>
+    <div class="header-right-block">
+      <a href="/liquidity-pools" class="text-white">Liquidity Pools</a>
+    </div>
   </div>
 </template>
 
