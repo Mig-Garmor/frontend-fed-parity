@@ -5,7 +5,7 @@ import { formatWithThousandsSeparator } from "../utils/helpers";
 
 import PageWrapper from "../components/PageWrapper.vue";
 import TableComponent from "../components/TableComponent.vue";
-import Loader from "../components/particles/loader.vue";
+import Loader from "../components/particles/Loader.vue";
 
 const liquidityPairs = ref({});
 const loadingPage = ref(true);
