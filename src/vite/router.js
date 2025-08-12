@@ -15,12 +15,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (
-    to.path === "/liquidity-pair" &&
-    import.meta.env.VITE_IS_ADMIN !== "true"
-  ) {
-    return next("/");
-  }
   next();
 });
 
