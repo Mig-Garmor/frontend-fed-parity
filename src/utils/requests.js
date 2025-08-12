@@ -9,8 +9,8 @@ export const fetchPrices = async () => {
   return await res.json();
 };
 
-export const fetchLiquidityPairs = async () => {
-  const res = await fetch(`${backendURL}/liquidity-pairs`, {
+export const fetchLiquidityPools = async () => {
+  const res = await fetch(`${backendURL}/liquidity-pools`, {
     headers: {
       "x-api-key": import.meta.env.VITE_API_KEY, //Is this necessary?
     },

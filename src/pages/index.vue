@@ -5,7 +5,6 @@ import { useAppStore } from "../stores/app";
 
 import TimesToParity from "../components/TimesToParity.vue";
 import TokenCircle from "../components/TokenCircle.vue";
-import HeaderComponent from "../components/HeaderComponent.vue";
 import PageWrapper from "../components/PageWrapper.vue";
 
 const tokenPrices = ref({});

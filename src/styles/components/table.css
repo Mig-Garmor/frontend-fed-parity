@@ -1,0 +1,15 @@
+.table-container {
+  .my-table {
+    th,
+    td {
+      @apply px-[8px] py-[12px] border border-gray-200;
+    }
+    th {
+      .sortable {
+        @apply cursor-pointer select-none;
+      }
+    }
+    @apply bg-white w-full border-collapse;
+  }
+  @apply min-w-0 w-screen max-w-[600px] rounded-[7px] overflow-x-auto;
+}
