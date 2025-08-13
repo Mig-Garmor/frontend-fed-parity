@@ -50,7 +50,7 @@ const preparedDataLiquidityPairs = computed(() => {
 
 <template>
   <PageWrapper>
-    <div class="liquidity-pairs-container">
+    <div class="liquidity-pools-container">
       <div class="text-white text-3xl pt-[20px]">FED - Liquidity Pools</div>
       <div class="table-container">
         <Loader v-if="loadingPage" />
@@ -64,4 +64,4 @@ const preparedDataLiquidityPairs = computed(() => {
   </PageWrapper>
 </template>
 
-<style lang="css" src="@styles/pages/liquidity-pairs.css"></style>
+<style lang="css" src="@styles/pages/liquidity-pools.css"></style>

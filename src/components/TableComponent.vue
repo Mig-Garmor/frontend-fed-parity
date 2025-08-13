@@ -40,7 +40,7 @@ const sortedItems = computed(() => {
 </script>
 
 <template>
-  <div class="table-container">
+  <div class="table-wrapper">
     <table class="my-table">
       <thead>
         <tr>

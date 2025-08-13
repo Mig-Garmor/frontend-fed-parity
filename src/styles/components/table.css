@@ -1,4 +1,4 @@
-.table-container {
+.table-wrapper {
   .my-table {
     th,
     td {
@@ -9,7 +9,10 @@
         @apply cursor-pointer select-none;
       }
     }
+    thead {
+      @apply sticky top-0 bg-white z-10;
+    }
     @apply bg-white w-full border-collapse;
   }
-  @apply min-w-0 w-screen max-w-[600px] rounded-[7px] overflow-x-auto;
+  @apply overflow-y-auto overflow-x-auto max-w-[600px] min-w-0 w-full rounded-[7px];
 }
