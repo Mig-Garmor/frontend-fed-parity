@@ -5,7 +5,9 @@ import HeaderComponent from "./HeaderComponent.vue";
 <template>
   <div class="page-wrapper">
     <HeaderComponent />
-    <slot></slot>
+    <div class="content-container">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

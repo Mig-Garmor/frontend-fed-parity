@@ -10,7 +10,8 @@
       <a href="/">$FED To Parity</a>
     </h1>
     <div class="header-right-block">
-      <a href="/liquidity-pools" class="text-white">Liquidity Pools</a>
+      <a href="/liquidity-pools" class="desktop-only">Liquidity Pools</a>
+      <a href="/liquidity-pools" class="mobile-only">LPs</a>
     </div>
   </div>
 </template>

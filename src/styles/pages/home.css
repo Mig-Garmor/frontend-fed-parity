@@ -1,5 +1,5 @@
 .last-updated {
-  @apply bg-gray-300 text-center text-black text-xs px-2 py-1 rounded-[5px];
+  @apply w-fit bg-gray-300 text-center text-black text-xs px-2 py-1 rounded-[5px];
 }
 
 .tokens-display-container {

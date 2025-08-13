@@ -39,8 +39,8 @@ const preparedDataLiquidityPairs = computed(() => {
       liquidity:
         pair.liquidity.total === ""
           ? "N/A"
-          : `$ ${formatWithThousandsSeparator(pair.liquidity.total)}`,
-      volume: `$ ${formatWithThousandsSeparator(pair.volume.h24)}`, // Displayed value, not the raw value, but formatted to $pair.volume.h24,
+          : `$${formatWithThousandsSeparator(pair.liquidity.total)}`,
+      volume: `$${formatWithThousandsSeparator(pair.volume.h24)}`, // Displayed value, not the raw value, but formatted to $pair.volume.h24,
       createdAt: formattedCreationDate, // Displayed value
       createdAtRaw: pair.pairCreationTime, // Numeric value for sorting
     };

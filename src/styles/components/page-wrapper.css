@@ -1,4 +1,7 @@
 .page-wrapper {
-  @apply flex flex-col justify-start items-center min-h-screen pb-[50px];
+  .content-container {
+    @apply flex flex-col justify-start items-center mt-[80px] min-w-0 w-full;
+  }
+  @apply flex flex-col justify-start items-center min-h-screen w-screen pb-[50px];
   @apply bg-[radial-gradient(circle_at_top_center,_#f000ff,_#101033,_#000015)];
 }
