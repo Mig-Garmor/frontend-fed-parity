@@ -5,7 +5,7 @@ import { useAppStore } from "../stores/app";
 const props = defineProps({
   svg: String,
   size: String,
-  price: Number,
+  price: String,
   name: String,
 });
 

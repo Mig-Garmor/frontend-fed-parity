@@ -43,10 +43,10 @@ const ratios = computed(() => {
   }
 });
 
-const readableLastUpdated = computed(() => {
+const lastUpdated = computed(() => {
   const tokenData = tokenPrices && tokenPrices.value;
 
-  if (tokenData) {
+  if (Object.keys(tokenData).length > 0) {
     const firstKeyWithLastUpdated =
       tokenData &&
       Object.keys(tokenData).find((key) => tokenData[key]?.lastUpdated);
@@ -62,19 +62,16 @@ const readableLastUpdated = computed(() => {
         dateStyle: "long",
         timeStyle: "short",
       });
-    } else return "";
+    } else return "error getting data";
   } else {
-    return "";
+    return "loading...";
   }
 });
 </script>
 
 <template>
-  <PageWrapper>
-    <div class="last-updated">
-      Last updated:
-      {{ readableLastUpdated ? readableLastUpdated : "Loading..." }}
-    </div>
+  <PageWrapper :lastUpdated="lastUpdated">
+    <div class="text-white text-3xl font-bold pt-[20px]">1:1:1</div>
     <div class="tokens-display-container">
       <div class="all-token-container">
         <TokenCircle
