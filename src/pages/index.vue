@@ -16,7 +16,7 @@ const appStore = useAppStore();
 const { deviceType } = useDeviceType();
 
 onMounted(async () => {
-  trackEvent("home-page", { deviceType: deviceType.value });
+  trackEvent("pageview", { deviceType: deviceType.value, page: "home" });
 
   tokenPrices.value = await fetchPrices();
   appStore.loading = false;

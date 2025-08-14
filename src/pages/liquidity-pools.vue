@@ -15,7 +15,10 @@ const loadingPage = ref(true);
 const { deviceType } = useDeviceType();
 
 onMounted(async () => {
-  trackEvent("liquidity-pools-page", { deviceType: deviceType.value });
+  trackEvent("pageview", {
+    deviceType: deviceType.value,
+    page: "liquidity-pools",
+  });
   liquidityPairs.value = await fetchLiquidityPools();
   loadingPage.value = false;
 });
