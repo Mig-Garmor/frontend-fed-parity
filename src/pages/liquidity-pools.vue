@@ -2,6 +2,8 @@
 import { ref, onMounted, computed } from "vue";
 import { fetchLiquidityPools } from "../utils/requests";
 import { formatWithThousandsSeparator } from "../utils/helpers";
+import { trackEvent } from "../utils/requests";
+import { useDeviceType } from "../composables/useDeviceType";
 
 import PageWrapper from "../components/PageWrapper.vue";
 import TableComponent from "../components/TableComponent.vue";
@@ -10,7 +12,10 @@ import Loader from "../components/particles/Loader.vue";
 const liquidityPairs = ref({});
 const loadingPage = ref(true);
 
+const { deviceType } = useDeviceType();
+
 onMounted(async () => {
+  trackEvent("liquidity-pools-page", { deviceType: deviceType.value });
   liquidityPairs.value = await fetchLiquidityPools();
   loadingPage.value = false;
 });

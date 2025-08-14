@@ -3,6 +3,8 @@ import { computed, onMounted, ref } from "vue";
 import { fetchPrices, trackEvent } from "../utils/requests";
 import { useAppStore } from "../stores/app";
 
+import { useDeviceType } from "../composables/useDeviceType";
+
 import TimesToParity from "../components/TimesToParity.vue";
 import TokenCircle from "../components/TokenCircle.vue";
 import PageWrapper from "../components/PageWrapper.vue";
@@ -11,8 +13,10 @@ const tokenPrices = ref({});
 
 const appStore = useAppStore();
 
+const { deviceType } = useDeviceType();
+
 onMounted(async () => {
-  trackEvent("pageview");
+  trackEvent("home-page", { deviceType: deviceType.value });
 
   tokenPrices.value = await fetchPrices();
   appStore.loading = false;
