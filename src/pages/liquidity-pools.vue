@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from "vue";
 import { fetchLiquidityPools } from "../utils/requests";
 import { formatWithThousandsSeparator } from "../utils/helpers";
 import { trackEvent } from "../utils/requests";
-import { useDeviceType } from "../composables/useDeviceType";
+import { useAppStore } from "../stores/app";
 
 import PageWrapper from "../components/PageWrapper.vue";
 import TableComponent from "../components/TableComponent.vue";
@@ -12,11 +12,11 @@ import Loader from "../components/particles/Loader.vue";
 const liquidityPairs = ref({});
 const loadingPage = ref(true);
 
-const { deviceType } = useDeviceType();
+const appStore = useAppStore();
 
 onMounted(async () => {
   trackEvent("pageview", {
-    deviceType: deviceType.value,
+    deviceType: appStore.deviceType.value,
     page: "liquidity-pools",
   });
   liquidityPairs.value = await fetchLiquidityPools();

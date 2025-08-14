@@ -3,21 +3,21 @@ import { useAppStore } from "../stores/app";
 import { Icon } from "@iconify/vue";
 import { dexscreenerRatios } from "../utils/urls";
 import { trackEvent } from "../utils/requests";
-import { useDeviceType } from "../composables/useDeviceType";
 
 import Arrow from "./Arrow.vue";
-
-const appStore = useAppStore();
-
-const { deviceType } = useDeviceType();
 
 const props = defineProps({
   multiplier: String,
   ratioName: String,
 });
 
+const appStore = useAppStore();
+
 const getRatioLink = (ratioName) => {
-  trackEvent("click", { ratioName: ratioName, deviceType: deviceType.value });
+  trackEvent("click", {
+    ratioName: ratioName,
+    deviceType: appStore.deviceType.value,
+  });
   window.open(dexscreenerRatios[ratioName], "_blank");
 };
 </script>
